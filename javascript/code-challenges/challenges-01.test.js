@@ -181,6 +181,31 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+
+  let newArr = [];
+
+  arr.forEach((element)=> {
+
+    if (element%3==0){
+
+       let newElement=element+"Fizz"
+      newArr.push(newElement)
+    } 
+    else if (element%5==0) {
+
+      let newElement=element+"Buzz"
+     newArr.push(newElement)
+    }
+else if (element%3==0 && element%5==0  ){
+
+  let newElement=element+"Fizz Buzz"
+  
+  newArr.push(newElement)
+}
+  }
+
+  )
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

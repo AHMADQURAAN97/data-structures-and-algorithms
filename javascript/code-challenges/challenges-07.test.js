@@ -27,17 +27,11 @@ let starWarsPeople = [
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
 
-  let newArray = starWarsArr.sort ((a,b) => {
+  return starWarsArr.sort ((a,b) => {
 
-if (a.height > b.height){
-  return -1;
-}
- elseif (a.height < b.height)
- return 1;
+    return b.height - a.height;
 
   });
-
-  return newArray;
 
   };
  
@@ -50,8 +44,9 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  arr.splice(1,3)
-
+  let array =arr;
+  array.splice(idx,3)
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,6 +57,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,6 +76,14 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+
+let array = str;
+
+for (let i=0 ; i <= array.length ; i++){
+result.push(str);
+str=str.slice(1);
+
+}
   return result;
 };
 
@@ -93,6 +97,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
+ 
 };
 
 
@@ -140,6 +146,55 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+
+
+  
+  let eats = recipe.ingredients;
+
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let tooth = eats[i];
+
+    
+
+    let noNumIng = tooth.replace(/[0-9]/g, "");
+    let noSpaceIng = noNumIng.replace(" ", "");
+
+    if (noSpaceIng.includes("medium-sized")) {
+      let noEat = noSpaceIng.replace("medium-sized", "");
+      let finished = noEat.replace(" ", "");
+      result.push(finished);
+      continue;
+    }
+
+    if (noSpaceIng.includes("pounds")) {
+      let noEat = noSpaceIng.replace("pounds", "");
+      let finished = noEat.replace(" ", "");
+      result.push(finished);
+      continue;
+    }
+
+    if (noSpaceIng.includes("pound")) {
+      let noEat = noSpaceIng.replace("pound", "");
+      let finished = noEat.replace(" ", "");
+      result.push(finished);
+      continue;
+    }
+
+    if (noSpaceIng.includes("gallons")) {
+      let noEat = noSpaceIng.replace("gallons", "");
+      let finished = noEat.replace(" ", "");
+      result.push(finished);
+      continue;
+    }
+
+   
+    if (noSpaceIng.includes("cups")) {
+      let noEat = noSpaceIng.replace("cups", "");
+      let finished = noEat.replace(" ", "");
+      result.push(finished);
+      continue;
+    }
+  }
   return result;
 };
 
